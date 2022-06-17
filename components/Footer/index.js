@@ -2,7 +2,7 @@ import React from 'react';
 import { SOCIAL_TWITTER, SOCIAL_TELEGRAM, SOCIAL_GITHUB} from '../../constants/social';
 
 function Footer() {
-    return(<footer id="footer" className="footer is-dark">
+    return(<footer id="footer" className="footer">
     <div className="content has-text-centered">
       <div>
         <a className="m-2" href={SOCIAL_TELEGRAM} target="_blank">

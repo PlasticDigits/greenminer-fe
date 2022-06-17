@@ -2,6 +2,7 @@
 
 body{
   background-color: $background;
+  padding:10px;
 }
 
 .full-width {
@@ -35,8 +36,12 @@ a.is-secondary{
   }
 }
 
-.footer .content a{
+.footer {
+  background-color: $background;
+  .content a{
   color:$primary;
+}
+
 }
 
 .image img{
