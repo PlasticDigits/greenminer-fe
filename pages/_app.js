@@ -61,7 +61,7 @@ class MyApp extends App {
 
 
           </Head>
-          <Component {...pageProps} />=
+          <Component {...pageProps} />
       </DAppProvider>
     );
   }

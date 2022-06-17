@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import type { ChainId } from '@usedapp/core'
-import { useEthers, shortenAddress, useLookupAddress, useChainMeta, useChainState  } from '@usedapp/core'
+import { useEthers, shortenAddress, useLookupAddress, useEtherBalance  } from '@usedapp/core'
 import styled from 'styled-components'
 import Web3Modal from 'web3modal'
 import { AccountModal } from '../AccountModal'
 import WalletConnectProvider from '@walletconnect/web3-provider'
 import { parseEther, formatEther } from '@ethersproject/units'
 
-const Web3ModalButton = ({busdBalance}) => {
+const Web3ModalButton = () => {
   const { account, activate, deactivate, chainId } = useEthers();
+  const etherBalance = useEtherBalance(account);
 
   const ens = useLookupAddress();
   const [showModal, setShowModal] = useState(false);
@@ -69,7 +70,7 @@ const Web3ModalButton = ({busdBalance}) => {
         <div className='is-inline-block mt-2 is-size-7' style={{position:"relative"}} onClick={() => setShowModal(!showModal)}>
           {ens ?? shortenAddress(account)}
           <div style={{position:"absolute",right:"0px",width:"50vw",top:"1.1em"}}>
-          {!!busdBalance ? Number(formatEther(busdBalance)).toFixed(2) : "..."} BUSD
+          {!!etherBalance ? Number(formatEther(etherBalance)).toFixed(4) : "..."} BNB
           </div>
           </div>
         {chainId && chainId == 56 ? (<div 
@@ -79,10 +80,10 @@ const Web3ModalButton = ({busdBalance}) => {
                 className="message is-inline-block mt-2 is-warning has-text-warning-dark has-background-warning pb-0 pt-1 pr-3 pl-3 is-small mb-0 ml-2" 
             >BSC Not Connected</div>
         )}
-        <button className="button is-inline-block ml-2 is-small is-primary is-outlined is-rounded" style={{marginTop:"3px",paddingTop:"6px"}} onClick={() => deactivate()}>Disconnect</button>
+        <button className="button is-inline-block ml-2 is-small is-dark is-rounded" style={{marginTop:"3px",paddingTop:"6px"}} onClick={() => deactivate()}>Disconnect</button>
         </>
       ) : (
-        <button className="button is-inline-block ml-2 is-small is-primary is-outlined is-rounded" style={{marginTop:"3px",paddingTop:"6px"}}  onClick={activateProvider}>Connect</button>
+        <button className="button is-inline-block ml-2 is-small is-dark is-rounded" style={{marginTop:"3px",paddingTop:"6px"}}  onClick={activateProvider}>Connect</button>
       )}
     </div>
   )
