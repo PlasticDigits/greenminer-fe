@@ -86,7 +86,7 @@ function Home() {
                 <h2 className="is-size-3 mt-3">Send BNB to join the Presale!</h2>
                 <div className="p-2" style={{maxWidth:"300px",borderLeft:"solid 3px #ff4500",borderRight:"solid 3px #ff4500",borderRadius:"10px",marginLeft:"auto",marginRight:"auto"}}>
                   <ul>
-                    <li style={{textShadow: "0px 0px 4px black"}}>GEM/BNB: 1900</li>
+                    <li style={{textShadow: "0px 0px 4px black"}}>1 BNB = 1900 GEM</li>
                     <li style={{textShadow: "0px 0px 4px black"}}>Hardcap: {displayWad(hardcap)} BNB</li>
                     <li style={{textShadow: "0px 0px 4px black"}}>Total Deposits: {displayWad(totalDeposits)} BNB</li>
                     <li style={{textShadow: "0px 0px 4px black"}}>Wallet Max: {displayWad(maxDepositWad)} BNB</li>
