@@ -1,5 +1,8 @@
 @import "./theme";
 
+html{
+  background-color: $background;
+}
 body{
   background-color: $background;
   padding:10px;
