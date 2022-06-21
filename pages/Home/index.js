@@ -89,11 +89,12 @@ function Home() {
             <div className='hero-body p-0 m-0 pt-5 pb-5' style={{color:"#ddd", backgroundImage:`url(${BackgroundImage})`,backgroundAttachment:"fixed"}}>
               <div className="container has-text-centered">
                 <h2 className="is-size-3 mt-3">Send BNB to join the Presale!</h2>
+                <h2 className="is-size-3 mt-3">SOLD OUT</h2>
                 <div className="p-2" style={{maxWidth:"300px",borderLeft:"solid 3px #ff4500",borderRight:"solid 3px #ff4500",borderRadius:"10px",marginLeft:"auto",marginRight:"auto"}}>
                   <ul>
                     <li style={{textShadow: "0px 0px 4px black"}}>1 BNB = 1900 GEM</li>
                     <li style={{textShadow: "0px 0px 4px black"}}>Hardcap: {displayWad(hardcap)} BNB</li>
-                    <li style={{textShadow: "0px 0px 4px black"}}>Total Deposits: {displayWad(totalDeposits)} BNB</li>
+                    <li style={{textShadow: "0px 0px 4px black"}}>Total Deposits: 15 BNB</li>
                     <li style={{textShadow: "0px 0px 4px black"}}>Wallet Max: {displayWad(maxDepositWad)} BNB</li>
                     <li style={{textShadow: "0px 0px 4px black"}}>Wallet Min: {displayWad(minDepositWad)} BNB</li>
                     <hr className="m-2"/>
