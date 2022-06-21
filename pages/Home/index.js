@@ -58,6 +58,11 @@ function Home() {
      method: 'endEpoch',
      args: []
    }) ?? {value:[]}
+  const { value: [depositedAmount], error: depositedAmountError } = useCall({
+     contract: GemSaleContract,
+     method: 'depositedAmount',
+     args: [account]
+   }) ?? {value:[]}
    
   const startEpochTimer = useCountdown(startEpoch,"Started");
   const endEpochTimer = useCountdown(endEpoch,"Ended");
@@ -95,7 +100,7 @@ function Home() {
                     <li style={{textShadow: "0px 0px 4px black"}}>Start Timer: {startEpochTimer}</li>
                     <li style={{textShadow: "0px 0px 4px black"}}>End Timer: {endEpochTimer}</li>
                     <hr className="m-2"/>
-                    <li style={{textShadow: "0px 0px 4px black"}}>Your Deposit: 0 BNB</li>
+                    <li style={{textShadow: "0px 0px 4px black"}}>Your Deposit: {displayWad(depositedAmount)} BNB</li>
                   </ul>
                 </div>
                 <div className='mt-6'>
